@@ -11,16 +11,17 @@ public class ExceptionCase {
 		//사용자가 0을 입력안하고 문자를 입력했을때 예외처리
 		Scanner scn = new Scanner(System.in);
 		
-
-		
-		System.out.printf("a/b...a?>");
-		int x = scn.nextInt();
-		
 		try {
+			System.out.printf("a/b...a?>");
+			double x = scn.nextDouble();
 		
 			System.out.printf("a/b...b?>");
-			int y =scn.nextInt();
-			System.out.printf("\n결과는 : %d/%d = %d\n",x,y,x/y );
+			double y =scn.nextDouble();
+			System.out.printf("\n결과는 : %f/%f = %f\n",x,y,x/y );
+			
+			if(y==0) {
+				throw new ArithmeticException();
+			}
 			
 		}catch(ArithmeticException e) {
 			
